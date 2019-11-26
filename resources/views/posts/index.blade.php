@@ -9,7 +9,7 @@ Blog Posts
 
 --}}
 
-@section('title', 'Blog Posts')
+@section('title', 'Sanolog(サノログ)')
 
 @section('content')
 <div class="container">
