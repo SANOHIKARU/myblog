@@ -11,7 +11,7 @@ Blog Posts
 
 {{-- manageからextendsしてindexを作ったほうがいい可能性もある。でも今は似たようなデザインだけど将来的には変化するし、二種類のデザインを試せる可能性もありますね --}}
 
-@section('title', 'Sanolog(サノログ) manage')
+@section('title', 'manage -Sanolog(サノログ)-')
 
 @section('content')
 <div class="container">
