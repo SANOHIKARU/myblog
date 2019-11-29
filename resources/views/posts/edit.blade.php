@@ -11,13 +11,13 @@
   {{ csrf_field() }}
   {{ method_field('patch') }}
   <p>
-    <input type="text" name="title" placeholder="enter title" value="{{ old('title', $post->title) }}">
+    <input type="text" name="title" placeholder="enter title" value="{{ old('title', $post->title) }} ">
     @if ($errors->has('title'))
     <span class="error">{{ $errors->first('title') }}</span>
     @endif
   </p>
   <p>
-    <textarea name="body" placeholder="enter body">{{ old('body', $post->body)}}</textarea>
+    <textarea name="body" placeholder="enter body" style=" height:400px;">{{ old('body', $post->body)}}</textarea>
     @if ($errors->has('body'))
     <span class="error">{{ $errors->first('body') }}</span>
     @endif
