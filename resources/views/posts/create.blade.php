@@ -4,7 +4,7 @@
 
 @section('content')
 <h1>
-<a href="{{ url('/') }}" class="header-menu">Back</a>
+  <a href="{{ url('/') }}" class="header-menu">Back</a>
   New Post
 </h1>
 <form method="post" action="{{  url('/posts')  }}">
@@ -16,7 +16,7 @@
     @endif
   </p>
   <p>
-    <textarea name="body" placeholder="enter body">{{ old('body')}}</textarea>
+    <textarea name="body" placeholder="enter body" style="height:400px;">{{ old('body')}}</textarea>
     @if ($errors->has('body'))
     <span class="error">{{ $errors->first('body') }}</span>
     @endif
@@ -35,7 +35,7 @@
 <head>
   <meta charset="utf-8">
   <title>{{ $post->title }}</title>
-  <link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/styles.css">
 </head>
 
 <body>
