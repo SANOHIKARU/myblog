@@ -6,12 +6,13 @@
 
 
 <h1>
-  
+  <a href="{{ action('PostsController@edit', $post) }}" class="edit">[Edit]</a>
+
   <a href="{{ url('/') }}" class="header-menu">Back</a>
   {{ $post->title }}
 
 </h1>
-<p style="font-size: 10px; border-bottom: 1px solid #ddd;">作成日: {{ $post->created_at }}</p> 
+<p style="font-size: 10px; border-bottom: 1px solid #ddd;">作成日: {{ $post->created_at }}</p>
 
 
 <p>{!! nl2br(e($post->body)) !!}</p>
@@ -24,13 +25,12 @@
   <li>
     {{ $comment->body }}
 
-    {{-- TODO: @section(delete)を追加してみる。 --}}
-    {{-- <a href="#" class="del" data-id="{{ $comment->id }}">[x]</a>
+    <a href="#" class="del" data-id="{{ $comment->id }}">[x]</a>
     <form method="post" action="{{ action('CommentsController@destroy', [$post, $comment]) }}"
       id="form_{{ $comment->id }}">
       {{ csrf_field() }}
       {{ method_field('delete') }}
-    </form> --}}
+    </form>
 
   </li>
 

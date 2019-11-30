@@ -15,7 +15,7 @@ class PostsController extends Controller
         return view('posts.index')->with('posts', $posts);
     }
 
-    public function manage()    //管理者用のトップページ
+    public function manageIndex()    //管理者用のトップページ
     {
         $posts = Post::latest()->get();
         return view('posts.manage')->with('posts', $posts);
@@ -29,6 +29,11 @@ class PostsController extends Controller
         return view('posts.show')->with('post', $post);
     }
 
+    public function manageShow(Post $post)
+    {
+        return view('posts.manage_show')->with('post', $post);
+    }
+
     public function create()
     {
         return view('posts.create');
@@ -36,7 +41,6 @@ class PostsController extends Controller
 
     public function store(PostRequest $request)
     {
-       
         $post = new Post();
         $post->title = $request->title;
         $post->body = $request->body;
@@ -51,17 +55,15 @@ class PostsController extends Controller
 
     public function update(PostRequest $request, Post $post)
     {
-      
         $post->title = $request->title;
         $post->body = $request->body;
         $post->save();
         return redirect('/manage');
     }
 
-    public function destroy(Post $post) {
+    public function destroy(Post $post)
+    {
         $post->delete();
         return redirect('/manage');
     }
-
-
 }

@@ -31,7 +31,7 @@ Blog Posts
     <!-- <li><a href="{{ url('/posts', $post->id) }}">{{ $post->title }}</a></li> -->
     <!-- <li><a href="{{ action('PostsController@show', $post->id) }}">{{ $post->title }}</a></li> -->
     <li>
-    <a href="{{ action('PostsController@show', $post) }}">{{ $post->title }}</a>
+    <a href="{{ action('PostsController@manageShow', $post) }}">{{ $post->title }}</a>
     <a href="{{ action('PostsController@edit', $post) }}" class="edit">[Edit]</a>
     <a href="#" class="del" data-id="{{ $post->id }}">[x]</a>
     <form method="post" action="{{ url('/posts', $post->id) }}" id="form_{{ $post->id }}">
