@@ -30,4 +30,6 @@ Route::delete('/posts/{post}', 'PostsController@destroy');
 Route::post('/posts/{post}/comments', 'CommentsController@store');
 Route::delete('/posts/{post}/comments/{comment}', 'CommentsController@destroy');
 
-Route::get('/manage', 'PostsController@manage');
+Route::get('/manage', 'PostsController@manageIndex');
+Route::get('/manage/{post}', 'PostsController@manageShow')->where('post', '[0-9]+');
+// where~: パラメータを正規表現でバリデーションしてる(今回は数字かどうかチェック。)
