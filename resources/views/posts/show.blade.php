@@ -6,12 +6,20 @@
 
 
 <h1>
-  
-  <a href="{{ url('/') }}" class="header-menu">Back</a>
+
+  @yield('edit')
+
+  @section('back')
+  <a href="{{ url('/') }}" class="header-menu">Top</a>
+  @show
+
+  @section('link')
   {{ $post->title }}
+  @show
+
 
 </h1>
-<p style="font-size: 10px; border-bottom: 1px solid #ddd;">作成日: {{ $post->created_at }}</p> 
+<p style="font-size: 10px; border-bottom: 1px solid #ddd;">作成日: {{ $post->created_at }}</p>
 
 
 <p>{!! nl2br(e($post->body)) !!}</p>
@@ -20,23 +28,18 @@
 <ul>
 
 
+  @section('delete')
+
   @forelse ($post->comments as $comment)
   <li>
     {{ $comment->body }}
-
-    {{-- TODO: @section(delete)を追加してみる。 --}}
-    {{-- <a href="#" class="del" data-id="{{ $comment->id }}">[x]</a>
-    <form method="post" action="{{ action('CommentsController@destroy', [$post, $comment]) }}"
-      id="form_{{ $comment->id }}">
-      {{ csrf_field() }}
-      {{ method_field('delete') }}
-    </form> --}}
-
+    </form>
   </li>
-
   @empty
-  <li>No comments yet</li>
+  <li>Nocommentsyet</li>
   @endforelse
+  @show
+
 </ul>
 
 <form method="post" action="{{  action('CommentsController@store', $post)  }}">

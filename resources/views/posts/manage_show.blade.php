@@ -1,58 +1,75 @@
-@extends('layouts.default')
+{{-- @extends('layouts.default') --}}
+@extends('posts.show')
+{{-- @section('title', "$post->title")
 
-@section('title', "$post->title")
-
-@section('content')
+@section('content') --}}
 
 
-<h1>
-  <a href="{{ action('PostsController@edit', $post) }}" class="edit">[Edit]</a>
 
-  <a href="{{ url('/') }}" class="header-menu">Back</a>
-  {{ $post->title }}
+{{-- <h1> --}}
+
+@section ('edit')
+<a href="{{ action('PostsController@edit', $post) }}" class="edit">[Edit]</a>
+@endsection
+
+@section('back')
+<a href="{{ url('/manage') }}" class="header-menu">Top</a>
+@endsection
+
+@section('link')
+<a href="{{ action('PostsController@show',$post) }}" class="show">{{ $post->title }}</a>
+@endsection
+
+
+{{-- <a href="{{ url('/') }}" class="header-menu">Back</a>
+{{ $post->title }}
 
 </h1>
 <p style="font-size: 10px; border-bottom: 1px solid #ddd;">作成日: {{ $post->created_at }}</p>
 
 
-<p>{!! nl2br(e($post->body)) !!}</p>
+<p>{!! nl2br(e($post->body)) !!}</p> --}}
 
-<h2>Comments</h2>
+{{-- <h2>Comments</h2>
 <ul>
 
+--}}
 
-  @forelse ($post->comments as $comment)
-  <li>
-    {{ $comment->body }}
+@section ('delete')
+{{-- @parent --}}
+@forelse ($post->Comments as $Comment)
+<li>
+  {{ $Comment->body }}
 
-    <a href="#" class="del" data-id="{{ $comment->id }}">[x]</a>
-    <form method="post" action="{{ action('CommentsController@destroy', [$post, $comment]) }}"
-      id="form_{{ $comment->id }}">
-      {{ csrf_field() }}
-      {{ method_field('delete') }}
-    </form>
+  <a href="#" class="del" data-id="{{ $Comment->id }}">[x]</a>
+  <form method="post" action="{{ action('CommentsController@destroy', [$post, $Comment]) }}"
+    id="form_{{ $Comment->id }}">
+    {{ csrf_field() }}
+    {{ method_field('delete') }}
+  </form>
+</li>
+@empty
+<li>No Comments yet</li>
+@endforelse
+@endsection
 
-  </li>
-
-  @empty
-  <li>No comments yet</li>
-  @endforelse
+{{-- 
 </ul>
 
 <form method="post" action="{{  action('CommentsController@store', $post)  }}">
-  {{ csrf_field() }}
-  <p>
-    <input type="text" name="body" placeholder="enter comment" value="{{ old('body') }}">
-    @if ($errors->has('body'))
-    <span class="error">{{ $errors->first('body') }}</span>
-    @endif
-  </p>
-  <p>
-    <input type="submit" value="Add Comment">
-  </p>
+{{ csrf_field() }}
+<p>
+  <input type="text" name="body" placeholder="enter Comment" value="{{ old('body') }}">
+  @if ($errors->has('body'))
+  <span class="error">{{ $errors->first('body') }}</span>
+  @endif
+</p>
+<p>
+  <input type="submit" value="Add Comment">
+</p>
 </form>
 <script src="/js/main.js"></script>
-@endsection
+@endsection --}}
 
 
 
