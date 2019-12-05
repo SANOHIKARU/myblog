@@ -35,5 +35,5 @@ Route::get('/manage/{post}', 'PostsController@manageShow')->where('post', '[0-9]
 // where~: パラメータを正規表現でバリデーションしてる(今回は数字かどうかチェック。)
 
 Route::get('/posts/good/{post}', 'PostsController@increaseGood');
-// Route::get('/posts/good/', 'PostsController@increaseGood');
+Route::get('/posts/notgood/{post}', 'PostsController@decreaseGood');
 

@@ -35,6 +35,9 @@ Blog Posts
       {{ $post->good }}
       <a href="{{ action('PostsController@increaseGood', $post) }}" class="btn btn-primary btn-sm">👍</a>
 
+      <a href="{{ action('PostsController@decreaseGood', $post) }}" class="btn btn-primary btn-sm">👎</a>
+
+
       <a href="{{ action('PostsController@manageShow', $post) }}">{{ $post->title }}</a>
       <a href="{{ action('PostsController@edit', $post) }}" class="edit">[Edit]</a>
       <a href="#" class="del" data-id="{{ $post->id }}">[x]</a>

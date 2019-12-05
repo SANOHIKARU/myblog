@@ -69,15 +69,17 @@ class PostsController extends Controller
 
     public function increaseGood(Post $post)
     {
-        // $post->good = $post->good + 1;
-        // $post->good->save();
-
-        // DB::table('users')->increment('votes');
-        // DB::table('posts')->increment('good');
-        // $post->where('id', 1)->increment('good');
         $post->increment('good');
 
-        return redirect('/');
-        // ちょっと微妙。もとにurlに戻したい。
+        // return redirect('/');
+        return back();
     }
+
+    public function decreaseGood(Post $post)
+    {
+        $post->decrement('good');
+        return back();
+    }
+
+
 }

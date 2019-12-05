@@ -21,20 +21,6 @@
 @endsection
 
 
-{{-- <a href="{{ url('/') }}" class="header-menu">Back</a>
-{{ $post->title }}
-
-</h1>
-<p style="font-size: 10px; border-bottom: 1px solid #ddd;">作成日: {{ $post->created_at }}</p>
-
-
-<p>{!! nl2br(e($post->body)) !!}</p> --}}
-
-{{-- <h2>Comments</h2>
-<ul>
-
---}}
-
 @section ('delete')
 {{-- @parent --}}
 @forelse ($post->Comments as $Comment)
@@ -49,7 +35,7 @@
   </form>
 </li>
 @empty
-<li>No Comments yet</li>
+{{-- <li>No Comments yet</li> --}}
 @endforelse
 @endsection
 

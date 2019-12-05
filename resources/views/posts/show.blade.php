@@ -39,7 +39,7 @@
     </form>
   </li>
   @empty
-  <li>Nocommentsyet</li>
+  {{-- <li>Nocommentsyet</li> --}}
   @endforelse
   @show
 
