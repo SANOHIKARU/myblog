@@ -13,6 +13,9 @@
   <a href="{{ url('/') }}" class="header-menu">Top</a>
   @show
 
+  {{ $post->good }}
+  <a href="{{ action('PostsController@increaseGood', $post) }}" class="btn btn-primary btn-sm">👍</a>
+
   @section('link')
   {{ $post->title }}
   @show
