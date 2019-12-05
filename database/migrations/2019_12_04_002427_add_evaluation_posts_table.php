@@ -15,8 +15,8 @@ class AddEvaluationPostsTable extends Migration
     {
         Schema::table('posts', function (Blueprint $table) {
             //
-            $table->unsignedBigInteger('good');
-            $table->unsignedBigInteger('bad');
+            $table->unsignedBigInteger('good')->default("0");;
+            $table->unsignedBigInteger('bad')->default("0");;
         });
     }
 
