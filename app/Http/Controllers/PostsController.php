@@ -78,5 +78,6 @@ class PostsController extends Controller
         $post->increment('good');
 
         return redirect('/');
+        // ちょっと微妙。もとにurlに戻したい。
     }
 }
