@@ -13,4 +13,9 @@ class Post extends Model
     {
         return $this->hasMany('App\Comment');
     }
+
+    public function evaluations()
+    {
+        return $this->hasOne('App\Evaluation');
+    }
 }

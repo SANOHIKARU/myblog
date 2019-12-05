@@ -66,4 +66,17 @@ class PostsController extends Controller
         $post->delete();
         return redirect('/manage');
     }
+
+    public function increaseGood(Post $post)
+    {
+        // $post->good = $post->good + 1;
+        // $post->good->save();
+
+        // DB::table('users')->increment('votes');
+        // DB::table('posts')->increment('good');
+        // $post->where('id', 1)->increment('good');
+        $post->increment('good');
+
+        return redirect('/');
+    }
 }
