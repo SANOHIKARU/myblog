@@ -30,10 +30,14 @@ Route::delete('/posts/{post}', 'PostsController@destroy');
 Route::post('/posts/{post}/comments', 'CommentsController@store');
 Route::delete('/posts/{post}/comments/{comment}', 'CommentsController@destroy');
 
-Route::get('/manage', 'PostsController@manageIndex');
-Route::get('/manage/{post}', 'PostsController@manageShow')->where('post', '[0-9]+');
+Route::get('/manage', 'PostsController@manageIndex')->middleware('auth');
+Route::get('/manage/{post}', 'PostsController@manageShow')->where('post', '[0-9]+')->middleware('auth');;
 // where~: パラメータを正規表現でバリデーションしてる(今回は数字かどうかチェック。)
 
 Route::get('/posts/good/{post}', 'PostsController@increaseGood');
-Route::get('/posts/notgood/{post}', 'PostsController@decreaseGood');
+Route::get('/posts/notgood/{post}', 'PostsController@decreaseGood')->middleware('auth');;
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

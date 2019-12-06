@@ -8,7 +8,7 @@ class Authenticate extends Middleware
 {
     /**
      * Get the path the user should be redirected to when they are not authenticated.
-     *
+     * ログインが必要なページにログインしてないユーザが来たときの処理
      * @param  \Illuminate\Http\Request  $request
      * @return string
      */
@@ -16,6 +16,8 @@ class Authenticate extends Middleware
     {
         if (! $request->expectsJson()) {
             return route('login');
+            // return url('/');
+
         }
     }
 }
