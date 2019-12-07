@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 use Socialite; 
-
+use App\User; 
 
 class LoginController extends Controller
 {
@@ -50,8 +50,15 @@ class LoginController extends Controller
     public function handleGoogleCallback()
     {
         // Google 認証後の処理
-        // あとで処理を追加しますが、とりあえず dd() で取得するユーザー情報を確認
         $gUser = Socialite::driver('google')->stateless()->user();
-        dd($gUser);
+        // email が合致するユーザーを取得
+        $user = User::where('email', $gUser->email)->first();
+        // 見つからなければ適当なページに飛ばす
+        if ($user == null) {
+            return redirect('/');
+        }
+        // ログイン処理
+        \Auth::login($user, true);
+        return redirect('/manage');
     }
 }
