@@ -42,3 +42,6 @@ Route::get('/posts/notgood/{post}', 'PostsController@decreaseGood')->middleware(
 //認証機能で追加されたRoute
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
+//Googleログイン
+Route::get('login/google', 'Auth\LoginController@redirectToGoogle');
+Route::get('login/google/callback', 'Auth\LoginController@handleGoogleCallback');
