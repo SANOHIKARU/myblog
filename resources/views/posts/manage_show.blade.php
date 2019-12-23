@@ -12,10 +12,11 @@
 <a href="{{ action('PostsController@edit', $post) }}" class="edit">[Edit]</a>
 @endsection
 
-@section('back')
+@section('top')
 <a href="{{ url('/manage') }}" class="header-menu">Top</a>
 @endsection
 
+{{-- manageでは記事タイトルに外向け記事へのリンク設置 --}}
 @section('link')
 <a href="{{ action('PostsController@show',$post) }}" class="show">{{ $post->title }}</a>
 @endsection

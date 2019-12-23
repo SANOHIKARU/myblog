@@ -7,9 +7,9 @@
 
 <h1>
 
-  @yield('edit')
+  @yield('edit') {{-- manageではeditへのリンク設置 --}}
 
-  @section('back')
+  @section('top')
   <a href="{{ url('/') }}" class="header-menu">Top</a>
   @show
 
