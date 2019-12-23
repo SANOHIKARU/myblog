@@ -11,13 +11,19 @@ Blog Posts
 
 {{-- manageからextendsしてindexを作ったほうがいい可能性もある。でも今は似たようなデザインだけど将来的には変化するし、二種類のデザインを試せる可能性もありますね --}}
 
-@section('title', 'manage -Sanolog(サノログ)-')
+@section('title', 'manage -さのひかるのメモ帳-')
 
 @section('content')
 <div class="container">
   <h1>
-    <a href="{{ url('/posts/create') }}" class="header-menu">New Post</a>
-    <a href="{{ url('/') }}">Blog Posts</a>
+    <a href="{{ url('/posts/create') }}" class="header-menu" style="margin: auto 3px;">New Post</a>
+    {{-- <a href="{{ url('/') }}">Blog Posts</a> --}}
+    <a href="{{ url('/') }}">さのひかるのメモ帳です</a>
+    <a href="{{ url('https://github.com/SANOHIKARU/myblog/issues') }}" class="header-menu" title="githubのissuesです"
+      style="margin: auto 3px;">|改築予定|</a>
+
+
+
   </h1>
   <ul style="list-style: none;">
     {{--
