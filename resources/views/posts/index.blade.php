@@ -20,6 +20,8 @@ Blog Posts
 
     <a href="{{ url('https://github.com/SANOHIKARU/myblog/issues') }}" class="header-menu" title="githubのissuesです" style="margin: auto 3px;" target="_blank">|改築予定|</a>
 
+    <a href="{{ url('http://sanosu-myblog.herokuapp.com/manage/14') }}" class="header-menu" title="手抜きですが、フィードバックフォームになります" style="margin: auto 3px;" >|フィードバック|</a>
+
     
   </h1>
   <ul style="list-style: none;">
