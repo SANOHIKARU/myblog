@@ -18,8 +18,9 @@ Blog Posts
     さのひかるのメモ帳です
 
 
-    <a href="{{ url('https://github.com/SANOHIKARU/myblog/issues') }}" class="header-menu" title="githubのissuesです" style="margin: auto 3px;">|改築予定|</a>
+    <a href="{{ url('https://github.com/SANOHIKARU/myblog/issues') }}" class="header-menu" title="githubのissuesです" style="margin: auto 3px;" target="_blank">|改築予定|</a>
 
+    
   </h1>
   <ul style="list-style: none;">
     {{-- <ul> --}}
