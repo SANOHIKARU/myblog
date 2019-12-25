@@ -9,6 +9,9 @@
 
   @yield('edit') {{-- manageではeditへのリンク設置 --}}
 
+  
+
+
   @section('top')
   <a href="{{ url('/') }}" class="header-menu">Top</a>
   @show
@@ -26,6 +29,12 @@
 
 
 <p>{!! nl2br(e($post->body)) !!}</p>
+
+<p>
+  <a href="javascript:window.open('http://twitter.com/share?text='+encodeURIComponent(document.title)+'&url='+encodeURIComponent(location.href),'sharewindow','width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!');">
+    <img src="{{ asset('/assets/Twitter.png') }}" alt="Twitter" width="20"  class="header-menu" title="Twitterで共有">
+</a>
+  {{-- <a href="{{ url('/') }}"><img src="{{ asset('/assets/Twitter.png') }}" alt="ロゴ" width="20"> --}}</p>
 
 <h2>Comments</h2>
 <ul>
