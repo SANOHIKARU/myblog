@@ -4,7 +4,8 @@
 
 @section('content')
 <h1>
-<a href="{{ url('/manage') }}" class="header-menu">Back</a>
+{{-- <a href="{{ url('/manage') }}" class="header-menu">Back</a> --}}
+<a href="{{ url()->previous() }}" class="header-menu">Back</a>
   Edit Post
 </h1>
 <form method="post" action="{{  url('/posts', $post->id) }}">
