@@ -1,6 +1,10 @@
 @extends('layouts.default')
 
-@section('title', "$post->title")
+  @section('GoogleAnalytics')
+  @parent {{-- GoogleAnalyticsを継承 --}}
+  @endsection
+
+@section('title', "$post->title - さのひかるのメモ帳 -")
 
 @section('content')
 
