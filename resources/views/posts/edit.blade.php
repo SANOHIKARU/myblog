@@ -1,6 +1,10 @@
 @extends('layouts.default')
 
-@section('title', 'Edit Post')
+@section('GoogleAnalytics')
+{{-- GoogleAnalytics拒否 --}}
+@endsection
+
+@section('title', 'Edit Post - さのひかるのメモ帳 -')
 
 @section('content')
 <h1>

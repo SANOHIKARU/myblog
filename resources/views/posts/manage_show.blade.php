@@ -1,9 +1,12 @@
 {{-- @extends('layouts.default') --}}
 @extends('posts.show')
-{{-- @section('title', "$post->title")
+@section('title', "manage $post->title - さのひかるのメモ帳 -")
 
-@section('content') --}}
+{{-- @section('content') --}}
 
+@section('GoogleAnalytics')
+{{-- GoogleAnalytics拒否 --}}
+@endsection
 
 
 {{-- <h1> --}}

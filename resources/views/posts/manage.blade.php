@@ -11,6 +11,10 @@ Blog Posts
 
 {{-- manageからextendsしてindexを作ったほうがいい可能性もある。でも今は似たようなデザインだけど将来的には変化するし、二種類のデザインを試せる可能性もありますね --}}
 
+@section('GoogleAnalytics')
+{{-- GoogleAnalytics拒否 --}}
+@endsection
+
 @section('title', 'manage -さのひかるのメモ帳-')
 
 @section('content')
